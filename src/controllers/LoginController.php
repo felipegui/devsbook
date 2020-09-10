@@ -6,7 +6,10 @@ use \core\Controller;
 class LoginController extends Controller {
 
     public function signin() {
-        echo 'login';
+        $this->render('login');
+    }
+    public function signinAction() {
+        echo 'Login - Recebido';
     }
     public function signup() {
         echo 'register';
