@@ -13,7 +13,7 @@
         </div>
     </header>
     <section class="container main">
-        <form method="POST" action="<?=$base;?>/login">
+        <form method="POST" action="<?=$base;?>/signin">
 
             <?php if( !empty($flash) ): ?>
                 <div class="flash"><?php echo $flash ?></div>

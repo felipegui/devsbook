@@ -12,7 +12,7 @@ class LoginController extends Controller {
             $flash = $_SESSION['flash'];
             $_SESSION['flash'] = '';
         }
-        $this->render('login', ['flash' => $flash]);
+        $this->render('signin', ['flash' => $flash]);
     }
     public function signinAction() {
         //Recebendo os dados email e password enviados do form
@@ -26,15 +26,23 @@ class LoginController extends Controller {
                 $this->redirect('/');
             } else {
                 $_SESSION['flash'] = 'E-mail e/ou senha não conferem';
-                $this->redirect('/login');
+                $this->redirect('/signin');
             }
         } else {
             $_SESSION['flash'] = 'Digite os campos de e-mail e/ou senha.';
-            $this->redirect('/login');
+            $this->redirect('/signin');
         }
     }
     public function signup() {
-        echo 'register';
+        $flash = '';
+        if( !empty($_SESSION['flash']) ){
+            $flash = $_SESSION['flash'];
+            $_SESSION['flash'] = '';
+        }
+        $this->render('signup', ['flash' => $flash]);
+    }
+    public function signupAction() {
+
     }
 
 }
