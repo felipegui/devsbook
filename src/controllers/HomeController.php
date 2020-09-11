@@ -6,6 +6,7 @@ use \src\helpers\LoginHelper;
 
 class HomeController extends Controller {
 
+    //Variável que armazena o usuário que está logado.
     private $loggedUser;
 
     public function __construct() {
