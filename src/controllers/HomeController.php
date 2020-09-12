@@ -14,7 +14,7 @@ class HomeController extends Controller {
         $this->loggedUser = LoginHelper::checkLogin();
 
         if( $this->loggedUser === false ) {
-            $this->redirect('/signin');
+            $this->redirect('/login');
         }
     }
 

@@ -29,7 +29,7 @@
 
             <input class="button" type="submit" value="Fazer cadastro" />
 
-            <a href="<?=$base;?>/signin">Já tem conta? Faça o login</a>
+            <a href="<?=$base;?>/login">Já tem conta? Faça o login</a>
         </form>
     </section>
 <script src="https://unpkg.com/imask"></script>
