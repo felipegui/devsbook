@@ -19,13 +19,13 @@
                 <div class="flash"><?php echo $flash ?></div>
             <?php endif; ?>
 
-            <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
+            <input placeholder="Email address" class="input" type="email" name="email" />
 
-            <input placeholder="Digite sua senha" class="input" type="password" name="password" />
+            <input placeholder="Password" class="input" type="password" name="password" />
 
-            <input class="button" type="submit" value="Acessar o sistema" />
+            <input class="button" type="submit" value="Sign in" />
 
-            <a href="<?=$base;?>/register">Ainda não tem conta? Cadastre-se</a>
+            <a href="<?=$base;?>/register">New to DevsBook? Create an account.</a>
         </form>
     </section>
 </body>

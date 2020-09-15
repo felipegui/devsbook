@@ -19,17 +19,17 @@
                 <div class="flash"><?php echo $flash ?></div>
             <?php endif; ?>
 
-            <input placeholder="Digite seu nome completo" class="input" type="text" name="name" />
+            <input placeholder="Username" class="input" type="text" name="name" />
 
-            <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
+            <input placeholder="Email address" class="input" type="email" name="email" />
 
-            <input placeholder="Digite sua senha" class="input" type="password" name="password" />
+            <input placeholder="Password" class="input" type="password" name="password" />
 
-            <input placeholder="Digite sua data de nascimento" class="input" type="text" name="birthdate" id="birthdate"/>
+            <input placeholder="Date of birth" class="input" type="text" name="birthdate" id="birthdate"/>
 
-            <input class="button" type="submit" value="Fazer cadastro" />
+            <input class="button" type="submit" value="Create account" />
 
-            <a href="<?=$base;?>/login">Já tem conta? Faça o login</a>
+            <a href="<?=$base;?>/login">Already have an account? Log in</a>
         </form>
     </section>
 <script src="https://unpkg.com/imask"></script>
