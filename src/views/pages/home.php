@@ -8,10 +8,10 @@
         <div class="row">
             <div class="column pr-5">
 
-                <?= $render('feed-editor'); ?>
+                <?= $render('feed-editor', ['user' => $loggedUser]); ?>
 
                 <?= $render('feed-item'); ?>
-                
+
             </div>
             <div class="column side pl-5">
                 <div class="box banners">
