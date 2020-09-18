@@ -3,6 +3,7 @@ namespace src\helpers;
 
 use \src\models\Post;
 use \src\models\UserRelation;
+use \src\models\User;
 
 class PostHelper {
     public static function addPost($idUser, $type, $body) {
@@ -26,6 +27,26 @@ class PostHelper {
             $users[] = $userItem['user_to'];
         }
         $users[] = $idUser;
+
+        $postList = Post::select()->where('id_user', 'in', $users)->orderBy('created_at', 'desc')->get();
+
+        $posts = [];
+        foreach( $postList as $postItem ) {
+            $newPost = new Post();
+            $newPost->id = $postItem['id'];
+            $newPost->type = $postItem['type'];
+            $newPost->created_at = $postItem['created_at'];
+            $newPost->body = $postItem['body'];
+
+            $newUser = User::select()->where('id', $postItem['id_user'])->one();
+            $newPost->user = new User();
+            $newPost->user->id = $newUser['id'];
+            $newPost->user->name = $newUser['name'];
+            $newPost->user->avatar = $newUser['avatar'];
+
+            $posts[] = $newPost;
+        }
+        return $posts;
     }
 }
 ?>
