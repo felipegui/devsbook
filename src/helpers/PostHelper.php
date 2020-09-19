@@ -37,12 +37,22 @@ class PostHelper {
             $newPost->type = $postItem['type'];
             $newPost->created_at = $postItem['created_at'];
             $newPost->body = $postItem['body'];
+            $newPost->mine = false;
+
+            if( $postItem['id_user'] == $idUser ) {
+                $newPost->mine = true;
+            }
 
             $newUser = User::select()->where('id', $postItem['id_user'])->one();
             $newPost->user = new User();
             $newPost->user->id = $newUser['id'];
             $newPost->user->name = $newUser['name'];
             $newPost->user->avatar = $newUser['avatar'];
+
+            $newPost->likeCount = 0;
+
+            $newPost->comments = [];
+            $newPost->liked = false;
 
             $posts[] = $newPost;
         }
